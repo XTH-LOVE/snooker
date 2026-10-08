@@ -28,6 +28,15 @@ const tableModelStretchBySize: Record<number, { x: number; y: number }> = {
   // 6ft values copied from the 12ft table for manual tuning.
   6: { x: -2800, y: -1350 },
   12: { x: 1420, y: 700 },
+  // 16 = a real 12ft snooker table (see TableConfig.defaultTableSize).
+  // Extrapolated, not measured: the mesh is stretched so that
+  // `length = length0 + 2 * stretch`, and the physics table length is
+  // proportional to sizeScale, so stretch is exactly linear in sizeScale.
+  // Fitting the two tuned points (0.6, -2800) and (1.2, 1420) gives
+  // stretchX = 7033.3 * sizeScale - 7020, hence 4233 at sizeScale 1.6.
+  // Same fit on y through (0.6, -1350) and (1.2, 700) gives 2067.
+  // Both values want an eyeball on the rendered table.
+  16: { x: 4233, y: 2067 },
 }
 
 export class Snooker implements Rules {

@@ -1,3 +1,17 @@
+> ## 本仓库说明
+>
+> 这是 [tailuge/billiards](https://github.com/tailuge/billiards) 的派生作品，遵循上游的
+> **GPL-3.0** 许可（见 [LICENSE](./LICENSE)）。上游版权归 tailuge 及其贡献者所有。
+>
+> 本 fork 的目标是把它调整成一个更接近真实的斯诺克游戏。目前相对上游的改动：
+>
+> - **台面尺寸**：斯诺克默认使用 `tableSize=16`，即真实 12 尺斯诺克台的比例
+>   （台长 68.8 个球径；真实值 68.0）。上游默认的 10 对应的是 9 尺美式台
+>   （43 球径），也就是"披着斯诺克规则的池台"。
+> - 为此在 `src/controller/rules/snooker.ts` 的 `tableModelStretchBySize` 里补了 16 一档。
+>
+> 以下为上游 README 原文。
+
 # Billiards - Free online pool and billiards game
 
 [![codecov](https://codecov.io/gh/tailuge/billiards/branch/master/graph/badge.svg?token=BH11KRAEL0)](https://codecov.io/gh/tailuge/billiards)
